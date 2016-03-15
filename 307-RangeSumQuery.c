@@ -23,6 +23,8 @@ struct NumArray
     int size;
 };
 
+//http://www.geeksforgeeks.org/binary-indexed-tree-or-fenwick-tree-2/
+//http://www.geeksforgeeks.org/segment-tree-set-1-sum-of-given-range/
 void updateElement(struct NumArray* numArray, int i, int val)
 {
     i++;
