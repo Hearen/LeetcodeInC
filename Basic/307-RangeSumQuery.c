@@ -15,6 +15,7 @@ Note:
 The array is only modifiable by the update function.
 You may assume the number of calls to update and sumRange function is distributed evenly.
 Source      : https://leetcode.com/problems/range-sum-query-mutable/
+Reference   : http://www.geeksforgeeks.org/binary-indexed-tree-or-fenwick-tree-2/
 *******************************************/
 #include <stdlib.h>
 struct NumArray
@@ -23,15 +24,15 @@ struct NumArray
     int size;
 };
 
-//http://www.geeksforgeeks.org/binary-indexed-tree-or-fenwick-tree-2/
-//http://www.geeksforgeeks.org/segment-tree-set-1-sum-of-given-range/
+//partial sums are stored in numArray->sums;
+//index of sums are 1 more than that in nums;
 void updateElement(struct NumArray* numArray, int i, int val)
 {
     i++;
     while(i <= numArray->size)
     {
         numArray->sums[i] += val;
-        i += (i & -i);
+        i += (i & -i); //move to its parent i UpdateView;
     }
 }
 
@@ -55,6 +56,8 @@ void update(struct NumArray* numArray, int i, int val)
     updateElement(numArray, i, d);
 }
 
+//partial sums are stored in numArray->sums;
+//index of sums are 1 more than that in nums;
 int getSum(struct NumArray* numArray, int i)
 {
     int sum = 0;
@@ -62,7 +65,7 @@ int getSum(struct NumArray* numArray, int i)
     while(i > 0)
     {
         sum += numArray->sums[i];
-        i -= (i & -i);
+        i -= (i & -i); //move to its parent in getSumView;
     }
     return sum;
 }
