@@ -16,9 +16,9 @@ bool isMatch(char* s, char* p)
     memset(pre, 0, sizeof(bool)*pLen);
     memset(cur, 0, sizeof(bool)*pLen);
     pre[0] = cur[0] = true;
-    for(int i=0; i < sLen; i++)//i and j here represent length instead of index;
+    for(int i=0; i < sLen; i++)
     {
-        if(i) cur[0]=false;
+        if(i) cur[0]=false; //string is not empty, so pattern cannot be empty;
         for(int j=1; j < pLen; j++)
         {
             char c=*(p+j-1);
