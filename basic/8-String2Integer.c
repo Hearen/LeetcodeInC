@@ -1,9 +1,11 @@
 /*******************************************
-Author: LHearen
-E-mail: LHearen@126.com
-Time  :	2015-12-15 08:27
-Description: 
-Source: https://leetcode.com/problems/string-to-integer-atoi/
+Author      : LHearen
+E-mail      : LHearen@126.com
+Time        : 2016-03-21 10:34
+Description : Implement atoi to convert a string to an integer.
+Hint: Carefully consider all possible input cases. If you want a challenge, please do not see below and ask yourself what are the possible input cases.
+Notes: It is intended for this problem to be specified vaguely (ie, no given input specs). You are responsible to gather all the input requirements up front.
+Source      : https://leetcode.com/problems/string-to-integer-atoi/
 *******************************************/
 #include<ctype.h>
 #include<limits.h>
