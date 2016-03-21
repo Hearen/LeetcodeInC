@@ -1,12 +1,18 @@
 /*******************************************
-author: lhearen
-e-mail: lhearen@126.com
-time  :	2015-12-02 21:29
-description: 
-Source: https://leetcode.com/problems/two-sum/
+Author      : LHearen
+E-mail      : LHearen@126.com
+Time        : 2016-03-21 10:45
+Description : Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+You may assume that each input would have exactly one solution.
+Example:
+Given nums = [2, 7, 11, 15], target = 9,
+Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].
+Source      : https://leetcode.com/problems/two-sum/ 
 *******************************************/
 //using another index array to record the indexes' changes;
 //using the sequence of the sum to find the target;
+//a trick method when using high-level language is to use hashmap to directly search the left;
 #define MIN(a, b) ((a) < (b) ? (a) : (b))
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
 void swap(int* p, int* q)

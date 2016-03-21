@@ -2,7 +2,8 @@
 Author      : LHearen
 E-mail      : LHearen@126.com
 Time        : 2016-02-29 12:23
-Description : 
+Description : Given an integer, convert it to a roman numeral.
+Input is guaranteed to be within the range from 1 to 3999.
 Source      : https://leetcode.com/problems/integer-to-roman/
 *******************************************/
 #include <stdlib.h>
