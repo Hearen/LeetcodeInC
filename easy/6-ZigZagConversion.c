@@ -2,7 +2,13 @@
 Author      : LHearen
 E-mail      : LHearen@126.com
 Time        : 2015-12-16 21:01
-Description : 
+Description : The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
+P   A   H   N
+A P L S I I G
+Y   I   R
+And then read line by line: "PAHNAPLSIIGYIR"
+string convert(string text, int nRows);
+convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
 Source      : https://leetcode.com/problems/zigzag-conversion/
 *******************************************/
 
