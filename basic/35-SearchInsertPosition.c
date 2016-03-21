@@ -10,14 +10,12 @@ int searchInsert0(int* nums, int numsSize, int target)
 {
     int i = 0;
     while(i < numsSize)
-    {
         if(nums[i++] >= target)
             break;
-    }
-    return (target > nums[i])? i : i-1;
+    return (target > nums[i-1])? i : i-1;
 }
 
-//AC - 4ms;
+//AC - 0ms;
 int searchInsert1(int* nums, int numsSize, int target)
 {
     int low = 0, high = numsSize - 1;
