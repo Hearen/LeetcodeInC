@@ -2,7 +2,7 @@
 Author      : LHearen
 E-mail      : LHearen@126.com
 Time        : 2016-01-20 11:32
-Description : 
+Description : Determine whether an integer is a palindrome. Do this without extra space.
 Source      : https://leetcode.com/problems/palindrome-number/
 *******************************************/
 #include <stdbool.h>
