@@ -2,7 +2,9 @@
 Author      : LHearen
 E-mail      : LHearen@126.com
 Time        : 2016-02-28 14:49
-Description : 
+Description : Reverse digits of an integer.
+Example1: x = 123, return 321
+Example2: x = -123, return -321
 Source      : https://leetcode.com/problems/reverse-integer/
 *******************************************/
 #include <bool.h>
