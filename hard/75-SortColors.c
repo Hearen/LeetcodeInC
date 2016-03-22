@@ -46,29 +46,3 @@ void sortColors(int* nums, int size)
     while(r < size && q < size)
         swap(nums+r++, nums+q++);
 }
-
-void sort(int* nums, int l, int r)
-{
-    int i = l, j = r;
-    int mid = nums[(i+j)>>1];
-    while(i <= j)
-    {
-        mid = (i+j)>>1; 
-        while(nums[i] < mid) i++;
-        while(nums[j] > mid) j--;
-        if(i <= j)
-        {
-            swap(nums+i, nums+j);
-            i++, j--;
-        }
-    }
-    if(l < j)
-        sort(nums, l, j);
-    if(i < r)
-        sort(nums, i, r);
-}
-//AC - 0ms;
-void sortColors1(int* nums, int size)
-{
-   sort(nums, 0, size-1); 
-}
