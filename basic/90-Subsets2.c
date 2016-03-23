@@ -19,56 +19,56 @@ If nums = [1,2,2], a solution is:
 ]
 Source      : https://leetcode.com/problems/subsets-ii/
 *******************************************/
-void search(int* nums, int size, int begin, int* stack, int top, int** columnSizes, int* count, int** table)
+void search(int* nums, int size, int begin, int* stack, int top, int** columnSizes, int* returnSize, int*** table)
 {
-    if(begin != 0 && top == -1)
-        return;
-    (*columnSizes)[*count] = top+1;
-    table[*count] = (int*)malloc(sizeof(int)*(top+1));
+    if(begin!=0 && top==-1) return ;
+    (*returnSize)++;
+    *columnSizes = (int*)realloc(*columnSizes, sizeof(int)*(*returnSize));
+    (*columnSizes)[*returnSize-1] = top+1;
+    *table = (int**)realloc(*table, sizeof(int*)*(*returnSize));
+    (*table)[*returnSize-1] = (int*)malloc(sizeof(int)*(top+1));
     for(int i = 0; i <= top; i++)
-        table[*count][i] = stack[i];
-    (*count)++;
+        (*table)[*returnSize-1][i] = stack[i];
     for(int i = begin; i < size; i++)
     {
         if(i == begin || nums[i] != nums[i-1])
         {
             stack[++top] = nums[i];
-            search(nums, size, i+1, stack, top, columnSizes, count, table);
+            search(nums, size, i+1, stack, top, columnSizes, returnSize, table);
             top--;
         }
     }
 }
 
+void sort(int* nums, int begin, int end)
+{
+    int l=begin, r=end;
+    int v = nums[l+(r-l)/2];
+    while(l <= r)
+    {
+        while(nums[l] < v) l++;
+        while(nums[r] > v) r--;
+        if(l <= r)
+        {
+            int t=nums[l]; nums[l]=nums[r]; nums[r]=t;
+            l++;
+            r--;
+        }
+    }
+    if(begin < r)
+        sort(nums, begin, r);
+    if(l < end)
+        sort(nums, l, end);
+}
+
 //AC - 4ms;
 int** subsetsWithDup(int* nums, int size, int** columnSizes, int* returnSize)
 {
-    int i, min = 0;
-    for(i = 0; i < size; i++)
-        if(nums[i] < nums[min])
-            min = i;
-    int t = nums[min];
-    nums[min] = nums[0];
-    nums[0] = t;
-    for(i = 1; i < size; i++)
-    {
-        t = nums[i];
-        int j = i;
-        while(t < nums[j-1])
-        {
-            nums[j] = nums[--j];
-        }
-        nums[j] = t;
-    }
-    *returnSize = 1;
-    for(int i = 0; i < size; i++)
-        *returnSize *= 2;
-    *columnSizes = (int*)malloc(sizeof(int)*(*returnSize));
-    int** table = (int**)malloc(sizeof(int*)*(*returnSize));
+    sort(nums, 0, size-1);
+    *columnSizes = (int*)malloc(sizeof(int));
+    int** table = (int**)malloc(sizeof(int*));
     int* stack = (int*)malloc(sizeof(int)*size);
     int top = -1;
-    int tmp = 0;
-    int* count = &tmp;
-    search(nums, size, 0, stack, top, columnSizes, count, table);
-    *returnSize = *count;
+    search(nums, size, 0, stack, top, columnSizes, returnSize, &table);
     return table;
 }
