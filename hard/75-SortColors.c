@@ -14,35 +14,87 @@ First, iterate the array counting number of 0's, 1's, and 2's, then overwrite ar
 Could you come up with an one-pass algorithm using only constant space?
 Source      : https://leetcode.com/problems/sort-colors/
 *******************************************/
-#define FOO
 void swap(int* p, int* q)
 {
-    int t = *p; *p = *q; *q = t;
+    int t=*p; *p=*q; *q=t;
 }
 
-//AC - 0ms;
+//AC - 0ms - one pass;
+void sortColors0(int* nums, int size)
+{
+    if(size < 2) return;
+    int index0=0, index2=size-1;
+    int i = 0;
+    while(i <= index2)
+    {
+        if(nums[i] == 0)
+            swap(nums+index0++, nums+i++);
+        else if(nums[i] == 2)
+            swap(nums+index2--, nums+i);
+        else i++;
+    }
+}
+
+//AC - 0ms - two passes;
+void sortColors1(int* nums, int size)
+{
+    if(size < 2) return ;
+    int index0=0, index1=size-1;
+    while(index0 != index1) //sort color ZERO;
+    {
+        while(nums[index0]==0 && index0<index1) index0++;
+        while(nums[index1]!=0 && index0<index1) index1--;
+        if(index0 != index1) swap(nums+index0, nums+index1);
+    }
+    index1 = size-1;
+    while(index0 != index1) //sort color ONE;
+    {
+        while(nums[index0]==1 && index0<index1) index0++;
+        while(nums[index1]!=1 && index0<index1) index1--;
+        if(index0 != index1) swap(nums+index0, nums+index1);
+    }
+}
+
+//AC - 0ms - one pass;
+void sortColors2(int* nums, int size)
+{
+    int index0=0, index1=0, index2=0;
+    for(int i = 0; i < size; i++)
+        switch(nums[i])
+        {
+            case 0: nums[index2++]=2; nums[index1++]=1; nums[index0++]=0; break;
+            case 1: nums[index2++]=2; nums[index1++]=1;  break;
+            case 2: nums[index2++] = 2; break;
+            default: break;
+        }
+}
+
 void sortColors(int* nums, int size)
 {
-    int p, l, r, q;
-    p = l = 0, q = r = size-1;
-    while(l <= r)
+    int index0=0, index1=size-1;
+    for(int i = 0; i < index1; i++)
     {
-        while(l < size && nums[l] == 0) l++;
-        while(r > -1 && nums[r] == 2) r--;
-        if(l < size && nums[l] == 1 && l <= q)
-            swap(nums+(l++), nums+(p++)); 
-        if(r > -1 && nums[r] == 1 && r >= p)
-            swap(nums+(r--), nums+(q--));
-        else if(l <= r && nums[r] == 0 && nums[l] == 2)
-        {
-            swap(nums+r, nums+l);
-            r--, l++;
-        }
+        if(nums[i] == 0) swap(nums+i, nums+index0++);
+        if(nums[i] == 2) swap(nums+i--, nums+index1--);
     }
-    nums[p] == 1? p : p--;
-    nums[q] == 1? q : q++;
-    while(l > -1 && p > -1)
-        swap(nums+l--, nums+p--);
-    while(r < size && q < size)
-        swap(nums+r++, nums+q++);
+}
+
+void sortKColors(int* nums, int size, int k)
+{
+    if(size < 2) return ;
+    int color0=1, color1=k;
+    int index0=0, index1=size-1;
+    while(color0 < color1)
+    {
+        int i = index0;
+        while(i <= index1)
+        {
+            if(nums[i] == color0)
+                swap(nums+index0++, nums+i++);
+            else if(nums[i] == color1)
+                swap(nums+index1--, nums+i);
+            else i++;
+        }
+        color0++, color1--;
+    }
 }
