@@ -23,28 +23,21 @@ Source      : https://leetcode.com/problems/word-search/
 //the termination conditions should be carefully handled;
 bool isFound(char** board, int row, int col, char*word, int rIndex, int cIndex)
 {
-    if(rIndex >= row || cIndex >= col || rIndex < 0 || cIndex < 0 || *word != board[rIndex][cIndex])
-        return false;
-    if(*(word+1) == '\0')
-        return true;
+    if(*word == '\0') return true; //reach it end;
+    if(rIndex>=row || cIndex>=col || rIndex<0 || cIndex<0 || *word!=board[rIndex][cIndex]) return false;
     char t = board[rIndex][cIndex];
-    //avoid re-visiting;
-    board[rIndex][cIndex] = '\0';
-    if(isFound(board, row, col, word + 1, rIndex + 1, cIndex) || isFound(board, row, col, word + 1, rIndex - 1, cIndex) ||
-            isFound(board, row, col, word + 1, rIndex, cIndex + 1) || isFound(board, row, col, word + 1, rIndex, cIndex - 1))
-        return true;
-    board[rIndex][cIndex] = t;
-    return false;
+    board[rIndex][cIndex] = '\0'; //avoid re-visiting;
+    if(isFound(board, row, col, word+1, rIndex+1, cIndex) || isFound(board, row, col, word+1, rIndex-1, cIndex) || isFound(board, row, col, word+1, rIndex, cIndex+1) || isFound(board, row, col, word+1, rIndex, cIndex-1)) return true;
+    board[rIndex][cIndex] = t; //restore to the original;
+    return false; //if all failed, return false;
 }
 
-bool exist(char** board, char row, int col, char* word)
+bool exist(char** board, int row, int col, char* word) 
 {
-    //start the searching from every point;
+    //Start from each position;
     for(int i = 0; i < row; i++)
         for(int j = 0; j < col; j++)
-        {
             if(isFound(board, row, col, word, i, j))
                 return true;
-        }
     return false;
 }
