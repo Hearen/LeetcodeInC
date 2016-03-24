@@ -10,7 +10,7 @@ Write a function to determine if a given target is in the array.
 Source      : https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
 *******************************************/
 #include <cstdbool.h>
-bool search(int* nums, int size, int target)
+bool search0(int* nums, int size, int target)
 {
     int l=0, r=size-1;
     while(l < r)
@@ -29,6 +29,29 @@ bool search(int* nums, int size, int target)
             if(nums[m]<target && target<=nums[r]) l = m+1;
             else r = m-1;
         }
+    }
+    return nums[l]==target;
+}
+
+bool search(int* nums, int size, int target)
+{
+    int l=0, r=size-1;
+    int m = 0;
+    while(l < r)
+    {
+        m = (l+r)/2;
+        if(nums[m] == target) return true;
+        if(nums[m] > nums[r])
+        {
+            if(nums[m]>target && nums[l]<=target) r = m;
+            else l = m+1;
+        }
+        else if(nums[m] < nums[r])
+        {
+            if(nums[m]<target && nums[r]>=target) l = m+1;
+            else r = m;
+        }
+        else r--;
     }
     return nums[l]==target;
 }

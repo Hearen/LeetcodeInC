@@ -48,10 +48,12 @@ int search1(int* nums, int size, int target)
     return nums[l]==target? l : -1;
 }
 
+//AC - 0ms;
+//actually the rotating process is a right-moving process;
 int search(int* nums, int size, int target)
 {
     int l=0, r=size-1;
-    while(l < r)
+    while(l < r) //searching for the rotating position;
     {
         int m=(l+r)/2;
         if(nums[m]>nums[r]) l=m+1;
