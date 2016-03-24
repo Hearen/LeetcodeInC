@@ -15,24 +15,32 @@ struct TreeNode
 int height(struct TreeNode* root)
 {
     if(!root) return 0;
-    if(!root->left && !root->right) return 1;
-    int lHeight=0, rHeight=0;
-    if(root->left)
-        lHeight = height(root->left)+1;
-    if(root->right)
-        rHeight = height(root->right)+1;
-    return lHeight > rHeight? lHeight : rHeight; 
+    int lHeight=height(root->left), rHeight=height(root->right);
+    return 1+(lHeight > rHeight? lHeight : rHeight); 
 }
 
-//AC - 8ms;
-bool isBalanced(struct TreeNode* root)
+//AC - 8ms - traverse twice;
+bool isBalanced0(struct TreeNode* root)
 {
     if(!root) return true;
-    int lHeight = height(root->left);
-    int rHeight = height(root->right);
-    int min = lHeight > rHeight? rHeight : lHeight;
-    int max = lHeight > rHeight? lHeight : rHeight;
-    if(max-min > 1)
-        return false;
-    return isBalanced(root->left) && isBalanced(root->right);
+    int lHeight = height(root->left), rHeight = height(root->right);
+    if(abs(lHeight-rHeight) > 1) return false;
+    return isBalanced0(root->left) && isBalanced0(root->right);
 }
+
+int helper(struct TreeNode* root)
+{
+    if(!root) return 0;
+    int lHeight=helper(root->left), rHeight=helper(root->right);
+    if(lHeight==-1 || rHeight==-1) return -1;
+    if(abs(lHeight-rHeight) > 1) return -1;
+    return 1+(lHeight>rHeight? lHeight:rHeight);
+}
+
+//AC - 8ms - just traverse once;
+bool isBalanced(struct TreeNode* root)
+{
+    return helper(root) != -1;
+}
+
+
