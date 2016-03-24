@@ -11,6 +11,7 @@ s2 = "dbbca",
 When s3 = "aadbbcbcac", return true.
 When s3 = "aadbbbaccc", return false.
 Source      : https://leetcode.com/problems/interleaving-string/
+Reference   : https://leetcode.com/discuss/19973/8ms-c-solution-using-bfs-with-explanation
 *******************************************/
 #include <stdbool.h>
 //AC - 0ms - DP solution;
