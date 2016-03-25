@@ -11,7 +11,7 @@ Return 3.
 Source      : https://leetcode.com/problems/distinct-subsequences/
 *******************************************/
 //AC - 4ms;
-int numDistinct(char* s, char* t)
+int numDistinct0(char* s, char* t)
 {
     int sLen = strlen(s), tLen = strlen(t);
     int *pre = (int*)malloc(sizeof(int)*(sLen+1));
@@ -27,8 +27,21 @@ int numDistinct(char* s, char* t)
             else
                 cur[j] = cur[j-1]+pre[j-1];
         }
-        for(int i=0; i <= sLen; i++)
-            pre[i] = cur[i];
+        memcpy(pre, cur, sizeof(int)*(sLen+1));
     }
     return pre[sLen];
 }
+
+//AC - 0ms;
+int numDistinct(char* s, char* t)
+{
+    int sLen=strlen(s), tLen=strlen(t);
+    int *cur = (int*)malloc(sizeof(int)*(tLen+1));
+    memset(cur, 0, sizeof(int)*(tLen+1));
+    cur[0] = 1;
+    for(int i = 1; i <= sLen; i++)
+        for(int j = tLen; j > 0; j--)
+            if(t[j-1] == s[i-1]) cur[i] += cur[i-1];
+    return cur[tLen];
+}
+
