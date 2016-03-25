@@ -16,6 +16,8 @@ Source      : https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with
 #include <limits.h>
 //AC - 4ms;
 //https://leetcode.com/discuss/71354/share-my-thinking-process
+//buy[i] = Math.max(buy[i - 1], sell[i - 2] - prices[i]);   
+//sell[i] = Math.max(sell[i - 1], buy[i - 1] + prices[i]);
 #define MAX(a, b) (a)>(b)? (a):(b)
 int maxProfit(int* prices, int size)
 {
