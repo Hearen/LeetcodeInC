@@ -20,6 +20,9 @@ Source      : https://leetcode.com/problems/gray-code/
 *******************************************/
 //AC - 0ms;
 //convert a unsigned binary number to reflected binary Gray Code (num >> 1) ^ num;
+//Bn-1Bn-2...B0 to GrayCode Gn-1Gn-2...G0
+//Gn-1 = Bn-1
+//Gi = Bi+1 ^ Bi (i=n-2...0)
 int grayCode(int n, int* returnSize)
 {
     *returnSize = 0;
