@@ -18,7 +18,6 @@ Source      : https://leetcode.com/problems/range-sum-query-mutable/
 Reference   : http://www.geeksforgeeks.org/binary-indexed-tree-or-fenwick-tree-2/
 Reference   : http://www.geeksforgeeks.org/segment-tree-set-1-sum-of-given-range/
 *******************************************/
-#include <stdlib.h>
 struct NumArray
 {
     int *nums, *sums;
