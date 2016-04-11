@@ -52,12 +52,13 @@ int isHappy2(int n)
     return true;
 }
 
+//in [0, 9] there are only 1 and 7 that are happy numbers;
 int isHappy(int n)
 {
-    while(n > 6)
+    while(n > 6) //once it's less than 6 if it's not 1 then it must be unhappy number;
     {
         int next = 0;
-        while(n)
+        while(n) //calculate the square sum;
         {
             next += (n%10)*(n%10);
             n /= 10;
