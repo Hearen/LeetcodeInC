@@ -30,7 +30,7 @@ char* shortestPalindrome(char* s)
     {
         ch = s[i];
         while ((k > 0) && (ch != s[k])) k = next[k - 1];
-        if (ch == s[k]) k++;
+        if (ch == s[k]) k++; //the length that matches;
     }
 
     // Finally, only (N - i - k - 1) chars need to be added to make the shortest palindrome
