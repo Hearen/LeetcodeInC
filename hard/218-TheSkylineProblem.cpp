@@ -26,6 +26,7 @@ class Solution
 {
 public:
     //AC - 806ms;
+    //https://leetcode.com/discuss/37630/my-c-code-using-one-priority-queue-812-ms
     vector<pair<int, int>> getSkyline(vector<vector<int>> buildings)
     {
         vector<pair<int, int>> res;
@@ -55,6 +56,7 @@ public:
     }
 
     //AC - 836ms;
+    //https://leetcode.com/discuss/67091/once-for-all-explanation-with-clean-java-code-nlog-time-space
     vector<pair<int, int>> getSkyline1(vector<vector<int>> buildings)
     {
         vector<pair<int, int>> coordinates, res;
