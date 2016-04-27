@@ -32,7 +32,7 @@ bool increasingTriplet0(int* nums, int size)
 //AC - 4ms;
 bool increasingTriplet(int* nums, int size)
 {
-    int first=second=INT_MAX;
+    int first=INT_MAX, second=INT_MAX;
     for(int i = 0; i < size; i++)
     {
         if(nums[i] > second) return true;
