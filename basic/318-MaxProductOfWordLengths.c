@@ -29,13 +29,13 @@ int maxProduct(char** words, int wSize)
         lens[i] = strlen(words[i]);
     int *flags = (int*)malloc(space);
     memset(flags, 0, space);
-    for(int i = 0; i < wSize; i++) //retrieve the bit-flag from word;
+    for(int i = 0; i < wSize; i++) //retrieve the bit-flag from words;
         for(int j = 0; words[i][j]; j++)
             flags[i] |= 1<<(words[i][j]-'a');
     int max = 0;
     for(int i = 0; i < wSize; i++) //traversing each pair of two different words;
         for(int j = i+1; j < wSize; j++)
-            if(!(flags[i] & flags[j]))
+            if(!(flags[i] & flags[j])) //using bit flags to check whether there are repeated letter between two words;
             {
                 int t = lens[i]*lens[j];
                 if(t > max)
