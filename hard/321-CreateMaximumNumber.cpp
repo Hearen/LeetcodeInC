@@ -114,8 +114,8 @@ public:
         int * res = new int[range*k*2 + 2*k], *dp1 = res+k, *dp2 = res+range*k+k, *tmp=res+range*2*k+k; //using one-dimension array to handle different arrays -> only using the necessary space without any waste;
         memset(res, 0, step);
         int sortedLen1=1, sortedLen2=1;
-        if (len1 == 0 && len2 > 0) getMax(nums2, len2, res, k, sortedLen2); //handle corner cases;
-        else if (len1 > 0 && len2 == 0) getMax(nums1, len1, res, k, sortedLen1);
+        if (len1 == 0 && len2 > 0) getMax(&nums2[0], len2, res, k, sortedLen2); //handle corner cases;
+        else if (len1 > 0 && len2 == 0) getMax(&nums1[0], len1, res, k, sortedLen1);
         else if (len1 > 0 && len2 > 0) //the normal case;
         {
             dp(&nums1[0], len1, sortedLen1, minL1, maxL1, dp1,k);
