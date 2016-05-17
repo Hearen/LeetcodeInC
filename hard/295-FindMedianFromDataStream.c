@@ -63,15 +63,7 @@ double findMedian(struct MedianFinder* mf)
 
 void MedianFinderFree(struct MedianFinder* mf)
 {
-    
+    free(mf->arr);
 }
 
-int main(int argc, char *argv[])
-{
-    struct MedianFinder *t = MedianFinderCreate();
-    addNum(t, 2);
-    printf("%f\n", findMedian(t));
-    addNum(t, 3);
-    printf("%f\n", findMedian(t));
-    return 0;
-}
+
