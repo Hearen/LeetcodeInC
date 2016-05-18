@@ -11,6 +11,7 @@ Source      : https://leetcode.com/problems/missing-number/
 *******************************************/
 #include <bool.h>
 //AC - 12ms - using O(n) space;
+//using boolean array to indicate its existence;
 int missingNumber0(int* nums, int size)
 {
     bool *arr = (int*)malloc(sizeof(bool)*(size+1));
@@ -22,7 +23,9 @@ int missingNumber0(int* nums, int size)
             return i;
 }
 
-//AC - 16ms;
+//AC - 16ms - using O(1) space and O(n) time;
+//since all elements are distinct and range from 1 to size;
+//so the missing one will be replaced by zero, so math can handle it;
 int missingNumber1(int* nums, int size)
 {
     int sum = (size*(size+1))/2;
@@ -31,8 +34,8 @@ int missingNumber1(int* nums, int size)
     return sum-t;
 }
 
-//AC - 12ms;
-//a^a=0 and 0^b=b;
+//AC - 12ms - using O(1) space and O(n) time;;
+//xor always can surprise us considering a^a=0 and 0^b=b;
 int missingNumber(int* nums, int size)
 {
     int t = size;
