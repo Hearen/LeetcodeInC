@@ -10,7 +10,11 @@ This is used just for warming up at the very beginning as a fresh man to C langu
 #### hard
 As for this part, it will contain something funny and challenging. All the problems within will be tricky or have quite many different solutions which also result in difficulty to be innovative enough.
 
+#### follow-up
+There are many cooler solutions outside, if you've got one please do not any hesitate to to share with me. That will be always welcome and funny.
+
 Contact
 ------
 Author: LHearen
+
 E-mail: LHearen@gmail.com
