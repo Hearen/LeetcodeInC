@@ -4,8 +4,7 @@ All solutions to the problems in Leetcode will be coded in C99 or C++11 enclosed
 #### format
 All the solutions will be arranged as the following way displaying the author, e-mail, working time, problem description, the URL of the problem and maybe some brilliant reference for the problem.
 
-'''
-
+```
 /*******************************************
 Author      : LHearen
 E-mail      : LHearen@126.com
@@ -50,8 +49,7 @@ int* maxSlidingWindow(int* nums, int size, int k, int* returnSize)
     }
     return arr;
 }
-
-'''
+```
 
 #### basic
 This part is mainly related to some basic fundamental problems which should be mastered smoothly.
