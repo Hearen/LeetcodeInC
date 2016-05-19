@@ -1,5 +1,5 @@
 # LeetcodeInC
-All solutions to the problems in Leetcode will be coded in C99 enclosed with critical comments. And all the solutions will be as much diversified as possible meantime remain its performance and conciseness.
+All solutions to the problems in Leetcode will be coded in C99 or C++11 enclosed with critical comments. And all the solutions will be as much diversified as possible while meantime keep their efficiency and conciseness.
 
 #### basic
 This part is mainly related to some basic fundamental problems which should be mastered smoothly.
@@ -9,3 +9,8 @@ This is used just for warming up at the very beginning as a fresh man to C langu
 
 #### hard
 As for this part, it will contain something funny and challenging. All the problems within will be tricky or have quite many different solutions which also result in difficulty to be innovative enough.
+
+Contact
+------
+Author: LHearen
+E-mail: LHearen@gmail.com
