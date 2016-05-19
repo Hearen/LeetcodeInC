@@ -1,8 +1,8 @@
-# LeetcodeInC
+## LeetcodeInC
 All solutions to the problems in Leetcode will be coded in C99 or C++11 enclosed with critical comments. And all the solutions will be as much diversified as possible while meantime keep their efficiency and conciseness.
 
 #### format
-All the solutions will be arranged as the following way displaying the author, e-mail, working time, problem description, the URL of the problem and maybe some brilliant reference for the problem.
+All the solutions will be arranged as the following way displaying the author, e-mail, working time, problem description, the URL of the problem and maybe some brilliant references and then the code along with performance and detailed comments for the problem.
 
 ```
 /*******************************************
@@ -51,19 +51,18 @@ int* maxSlidingWindow(int* nums, int size, int k, int* returnSize)
 }
 ```
 
-#### basic
-This part is mainly related to some basic fundamental problems which should be mastered smoothly.
+#### folders
+There are different folders containing the solutions:
 
-#### easy
-This is used just for warming up at the very beginning as a fresh man to C language or after long-time un-touching it, which works as a hello-world program.
+- basic - This part is mainly related to some basic fundamental problems which should be mastered smoothly.
 
-#### hard
-As for this part, it will contain something funny and challenging. All the problems within will be tricky or have quite many different solutions which also result in difficulty to be innovative enough.
+- easy - This is used just for warming up at the very beginning as a fresh man to C language or after long-time un-touching it, which works as a hello-world program.
+
+- hard - As for this part, it will contain something funny and challenging. All the problems within will be tricky or have quite many different solutions which also result in difficulty to be innovative enough.
 
 #### follow-up
 There are many cooler solutions out there. So if you've got one, please do not be any hesitated to share with me. That will be always welcome and funny.
 
-Contact
-------
+#### Contact
 - Author: LHearen
 - E-mail: LHearen@gmail.com
