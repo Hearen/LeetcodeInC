@@ -41,35 +41,23 @@ int* preorderTraversal0(struct TreeNode* root, int* returnSize)
     return arr;
 }
 
-void storeAndCollectLeftNodes(struct TreeNode* root, struct TreeNode*** stack, int* size, int** arr, int* returnSize)
-{
-    while(root)
-    {
-        *returnSize += 1;
-        *arr = (int*)realloc(*arr, sizeof(int)*(*returnSize));
-        (*arr)[*returnSize-1] = root->val;
-        *stack = (struct TreeNode**)realloc(*stack, sizeof(struct TreeNode*)*(*size+1));
-        *size += 1;
-        (*stack)[*size-1] = root;
-        root = root->left;
-    }
-}
 
 //AC - 0ms;
+#define LEN 10000
 int* preorderTraversal1(struct TreeNode* root, int* returnSize)
 {
-    if(!root) return NULL;
-    int* arr = (int*)malloc(sizeof(int));
     *returnSize = 0;
-    struct TreeNode** stack = (struct TreeNode**)malloc(sizeof(struct TreeNode*));
-    int size = 0;
-    storeAndCollectLeftNodes(root, &stack, &size, &arr, returnSize);
-    while(size)
+    if(!root) return NULL;
+    int* arr = (int*)malloc(sizeof(int)*LEN);
+    struct TreeNode** stack = (struct TreeNode**)malloc(sizeof(struct TreeNode*)*LEN);
+    int top = -1;
+    stack[++top] = root;
+    while(top > -1)
     {
-        root = stack[size-1];
-        size--;
-        if(root->right) //handle the right children of leftmost nodes;
-            storeAndCollectLeftNodes(root->right, &stack, &size, &arr, returnSize);
+        struct TreeNode* t = stack[top--];
+        arr[(*returnSize)++] = t->val;
+        if(t->right) stack[++top] = t->right;
+        if(t->left) stack[++top] = t->left;
     }
     return arr;
 }
