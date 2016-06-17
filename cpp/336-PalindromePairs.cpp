@@ -46,7 +46,7 @@ public:
                     if(table.count(t_str))  //accelerate the checking process;
                     {
                         t = table[t_str];
-                        if((t!=i) && (len>=words[t].size())) //avoid duplicates;
+                        if(t!=i && l>=0) //avoid duplicates;
                         result.push_back(vector<int>{i, t}); //the matched word will be the suffix;
                     }
                 }
@@ -56,7 +56,7 @@ public:
                     if(table.count(t_str)) 
                     {
                         t = table[t_str];
-                        if((t!=i) && (len>words[t].size())) //avoid duplicates;
+                        if(t!=i && len>l) //avoid duplicates cooperating with l>=0 above;
                         result.push_back(vector<int>{t, i}); //the matched word the prefix;
                     }
                 }
