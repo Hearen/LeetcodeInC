@@ -23,6 +23,24 @@ Source      : https://leetcode.com/problems/validate-binary-search-tree/
 *******************************************/
 class Solution {
 private:
+    bool validateBST(TreeNode* root, TreeNode*& pre)
+    {
+        if(!root) return true;
+        if(!validateBST(root->left, pre)) return false;
+        if(pre && pre->val>=root->val) return false;
+        pre = root;
+        return validateBST(root->right, pre);
+    }
+public:
+    bool isValidBST(TreeNode* root) 
+    {
+        TreeNode *pre = NULL;
+        return validateBST(root, pre);
+    }
+};
+
+class Solution {
+private:
     bool valid(TreeNode* root, long lower, long upper)
     {
         if(!root) return true;
@@ -37,7 +55,7 @@ public:
         return valid(root, (long)INT_MIN-1, (long)INT_MAX+1);
     }
 
-    //Mrris Traversal;
+    //Morris Traversal;
     bool isValidBST(TreeNode* root) 
     {
         if(!root) return true;
@@ -76,3 +94,4 @@ public:
         return flag;
     }
 };
+
