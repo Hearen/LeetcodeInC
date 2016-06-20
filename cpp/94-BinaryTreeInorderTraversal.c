@@ -44,6 +44,26 @@ int* inorderTraversal0(struct TreeNode* root, int* returnSize)
     return arr;
 }
 
+vector<int> inorderTraversal(TreeNode* root) 
+{
+    vector<int> v;
+    if(!root) return v;
+    stack<TreeNode*> nodeStack;
+    while(root || !nodeStack.empty())
+    {
+        while(root)
+        {
+            nodeStack.push(root);
+            root = root->left;
+        }
+        root = nodeStack.top();
+        nodeStack.pop();
+        v.push_back(root->val);
+        root = root->right;
+    }
+    return v;
+}
+
 
 void collectLeftNodes(struct TreeNode* root, struct TreeNode*** stack, int* size)
 {
