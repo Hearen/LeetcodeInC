@@ -48,4 +48,24 @@ public:
         }
         return v;
     }
+
+    //AC - 40ms - using priority_queue;
+    vector<int> topKFrequent(vector<int>& nums, int k) 
+    {
+        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> minHeap;
+        vector<int> v;
+        unordered_map<int, int> counters;
+        for(int i = 0; i < nums.size(); ++i) counters[nums[i]]++;
+        for(auto& pair: counters) 
+        {
+            minHeap.push({pair.second, pair.first});
+            if(minHeap.size() > k) minHeap.pop();
+        }
+        while(!minHeap.empty())
+        {
+            v.push_back(minHeap.top().second);
+            minHeap.pop();
+        }
+        return v;
+    }
 };
