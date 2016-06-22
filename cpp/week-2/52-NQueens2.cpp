@@ -29,7 +29,6 @@ public:
     int totalNQueens(int n) 
     {
         vector<int> forward(2*n-1), backward(2*n-1), cols(n); //using int is more efficient than bool;
-        int count = 0;
         return search(n, 0, forward, backward, cols);
     }
 };
