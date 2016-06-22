@@ -22,6 +22,7 @@ Source      : https://leetcode.com/problems/subsets-ii/
 class Solution {
 private:
     int size;
+    //return 2^n unique sets where n is determined by pos;
     void search(vector<int>& nums, int pos, vector<int>& v, vector<vector<int>>& vv)
     {
         vv.push_back(v);
