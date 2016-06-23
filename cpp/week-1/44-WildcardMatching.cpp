@@ -1,7 +1,7 @@
 /*******************************************
 Author      : LHearen
 E-mail      : LHearen@126.com
-Time        : 2016-02-14 15:11
+Time        : Thu, 23 Jun 2016 08:59 CST
 Description : Implement wildcard pattern matching with support for '?' and '*'.
 '?' Matches any single character.
 '*' Matches any sequence of characters (including the empty sequence).
@@ -16,9 +16,9 @@ isMatch("aa", "*") → true
 isMatch("aa", "a*") → true
 isMatch("ab", "?*") → true
 isMatch("aab", "c*a*b") → false
+
 Source      : https://leetcode.com/problems/wildcard-matching/
 *******************************************/
-#include <stdbool.h>
 class Solution {
 public:
     //AC - 20ms - using recorder;
