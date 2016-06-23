@@ -14,43 +14,6 @@ A solution set is:
 Source      : https://leetcode.com/problems/4sum/
 *******************************************/
 class Solution {
-public:
-    //AC - 16ms - best submission;
-    vector<vector<int>> fourSum(vector<int>& nums, int target) 
-    {
-        sort(nums.begin(), nums.end());
-        vector<vector<int>> vv;
-        int size = nums.size();
-        for(int i = 0; i < size-3; ++i)
-        {
-            if(i && nums[i]==nums[i-1]) continue;
-            if(nums[i]+nums[i+1]+nums[i+2]+nums[i+3] > target) break;
-            if(nums[i]+nums[size-3]+nums[size-2]+nums[size-1] < target) continue;
-            for(int j = i+1; j < size-2; ++j)
-            {
-                if(j>i+1 && nums[j]==nums[j-1]) continue;
-                if(nums[i]+nums[j]+nums[j+1]+nums[j+2] > target) break;
-                if(nums[i]+nums[j]+nums[size-2]+nums[size-1] < target) continue;
-                int l = j+1, r = size-1;
-                while(l < r)
-                {
-                    int t = nums[i]+nums[j]+nums[l]+nums[r];
-                    if(t < target) l++;
-                    else if(t > target) r--;
-                    else
-                    {
-                        vv.push_back(vector<int>{nums[i], nums[j], nums[l++], nums[r--]});
-                        while(l<r && nums[l]==nums[l-1]) l++;
-                        while(l<r && nums[r]==nums[r+1]) r--;
-                    }
-                }
-            }
-        }
-        return vv;
-    }
-};
-
-class Solution {
 private:
     const int K = 4;
     int size = 0;
@@ -99,6 +62,40 @@ public:
         vector<vector<int>> vv;
         vector<int> v(K, 0);
         search(nums, 0, K, target, v, vv);
+        return vv;
+    }
+
+    //AC - 16ms - best submission;
+    vector<vector<int>> fourSum(vector<int>& nums, int target) 
+    {
+        sort(nums.begin(), nums.end());
+        vector<vector<int>> vv;
+        int size = nums.size();
+        for(int i = 0; i < size-3; ++i)
+        {
+            if(i && nums[i]==nums[i-1]) continue;
+            if(nums[i]+nums[i+1]+nums[i+2]+nums[i+3] > target) break;
+            if(nums[i]+nums[size-3]+nums[size-2]+nums[size-1] < target) continue;
+            for(int j = i+1; j < size-2; ++j)
+            {
+                if(j>i+1 && nums[j]==nums[j-1]) continue;
+                if(nums[i]+nums[j]+nums[j+1]+nums[j+2] > target) break;
+                if(nums[i]+nums[j]+nums[size-2]+nums[size-1] < target) continue;
+                int l = j+1, r = size-1;
+                while(l < r)
+                {
+                    int t = nums[i]+nums[j]+nums[l]+nums[r];
+                    if(t < target) l++;
+                    else if(t > target) r--;
+                    else
+                    {
+                        vv.push_back(vector<int>{nums[i], nums[j], nums[l++], nums[r--]});
+                        while(l<r && nums[l]==nums[l-1]) l++;
+                        while(l<r && nums[r]==nums[r+1]) r--;
+                    }
+                }
+            }
+        }
         return vv;
     }
 };
