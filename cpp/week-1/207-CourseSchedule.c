@@ -1,7 +1,7 @@
 /*******************************************
 Author      : LHearen
 E-mail      : LHearen@126.com
-Time        : 2016-03-04 20:02
+Time        : Thu, 23 Jun 2016 19:22 CST
 Description : There are a total of n courses you have to take, labeled from 0 to n - 1.
 Some courses may have prerequisites, for example to take course 0 you have to first take course 1, which is expressed as a pair: [0,1]
 Given the total number of courses and a list of prerequisite pairs, is it possible for you to finish all courses?
@@ -40,51 +40,6 @@ public:
         return true;
     }
 
-    //AC - 320ms - topological sorting method;
-    bool canFinish(int num, vector<pair<int, int>> pres)
-    {
-        unordered_map<int, vector<int>> graph;
-        vector<int> indegrees(num, 0);
-        for(auto& pair: pres)
-        {
-            graph[pair.second].push_back(pair.first);
-            indegrees[pair.first]++;
-        }
-        while(graph.size())
-        {
-            int i = 0;
-            for(; i < num; i++)
-                if(graph.count(i) && indegrees[i]==0) break;
-            if(i == num) return false;
-            for(int neigh: graph[i])
-                indegrees[neigh]--;
-            graph.erase(i);
-        }
-        return true;
-    }
-
-    //AC - 36ms - using vector instead of unordered_map to accelerate;
-    bool canFinish(int num, vector<pair<int, int>> pres)
-    {
-        vector<vector<int>> graph(num);
-        vector<int> indegrees(num, 0);
-        for(auto& pair: pres)
-        {
-            graph[pair.second].push_back(pair.first);
-            indegrees[pair.first]++;
-        }
-        for(int  j = 0; j < num; j++)
-        {
-            int i = 0;
-            for(; i < num; i++)
-                if(!indegrees[i]) break;
-            indegrees[i] = -1; //avoid re-checking;
-            if(i == num) return false;
-            for(int neigh: graph[i])
-                indegrees[neigh]--;
-        }
-        return true;
-    }
 
     //AC - 20ms - BFS and topological sort;
     bool canFinish(int num, vector<pair<int, int>>& pres) 
