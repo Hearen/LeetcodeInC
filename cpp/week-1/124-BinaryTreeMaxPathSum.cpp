@@ -1,7 +1,7 @@
 /*******************************************
 Author      : LHearen
 E-mail      : LHearen@126.com
-Time        : 2016-02-20 20:05
+Time        : Thu, 23 Jun 2016 09:52 CST
 Description : Given a binary tree, find the maximum path sum.
 For this problem, a path is defined as any sequence of nodes from some starting node to any node in the tree along the parent-child connections. The path does not need to go through the root.
 For example:
@@ -30,5 +30,4 @@ public:
         traverse(root, maxSum);
         return maxSum;
     }
-
 };
