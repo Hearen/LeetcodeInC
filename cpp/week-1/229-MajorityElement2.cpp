@@ -31,6 +31,7 @@ public:
         return v;
     }
 
+    //Generalized K majority elements; 
     vector<int> majorityElement(vector<int>& nums) 
     {
         int k = K-1, j = 0;
@@ -40,7 +41,7 @@ public:
         int candidates[k]{0}, counters[k]{0};
         //ensure there is no duplicate in candidates;
         candidates[0] = 1;
-        for(int i = 0; i < nums.size(); ++i)
+        for(int i = 0; i < nums.size(); ++i) //voting process (increase->add->decrease);
         {
             for(j = 0; j < k; ++j)
             {
@@ -65,7 +66,7 @@ public:
                 counters[j]--;
         }
         for(int i = 0; i < k; ++i) counters[i] = 0;
-        for(int i = 0; i < nums.size(); ++i) 
+        for(int i = 0; i < nums.size(); ++i) //counting process;
         {
             for(int j = 0; j < k; ++j)
             {
@@ -73,7 +74,7 @@ public:
                 counters[j]++;
             }
         }
-        for(int j = 0; j < k; ++j)
+        for(int j = 0; j < k; ++j) //selecting process;
         {
             if(counters[j] > nums.size()/K)
                 v.push_back(candidates[j]);
