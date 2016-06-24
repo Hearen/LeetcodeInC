@@ -1,7 +1,7 @@
 /*******************************************
 Author      : LHearen
 E-mail      : LHearen@126.com
-Time        : 2016-02-29 20:54
+Time        : Fri, 24 Jun 2016 14:56 CST
 Description : Convert a non-negative integer to its english words representation. Given input is guaranteed to be less than 231 - 1.
 For example,
 123 -> "One Hundred Twenty Three"

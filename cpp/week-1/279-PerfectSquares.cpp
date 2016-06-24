@@ -28,16 +28,15 @@ public:
     //AC - 12ms - DP;
     int numSquares(int n) 
     {
-        static vector<int> v({0, 1}); //using static accelerate from 324ms to 12ms;
+        static vector<int> v{0, 1};
+        int a = 0, b = 0, t = 0;
         while(v.size() <= n)
         {
-            int a = v.size();
-            int t = a;
-            for(int j = sqrt(a); j > 0; j--)
+            a = t= v.size();
+            for(int i = sqrt(a); i > 0; --i)
             {
-                int b = a-j*j;
-                if(!b) t = 1;
-                else t = min(t, 1+v[b]);
+                b = a-i*i;
+                t = min(t, !b? 1 : 1+v[b]);
             }
             v.push_back(t);
         }
