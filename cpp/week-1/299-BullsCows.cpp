@@ -30,9 +30,8 @@ public:
             if(secret[i] == guess[i]) bulls++;
             else 
             {
-                if(counts[secret[i]-'0'] > 0) cows++;
-                if(counts[guess[i]-'0'] < 0) cows++;
-                counts[secret[i]-'0']--, counts[guess[i]-'0']++;
+                if(counts[secret[i]-'0']-- > 0) cows++;
+                if(counts[guess[i]-'0']++ < 0) cows++;
             }
             i++;
         }
