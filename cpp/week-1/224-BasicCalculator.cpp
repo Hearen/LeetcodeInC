@@ -1,12 +1,6 @@
 /*******************************************
 Author      : LHearen
 E-mail      : LHearen@126.com
-Description : 
-Source      : 
-*******************************************/
-/*******************************************
-Author      : LHearen
-E-mail      : LHearen@126.com
 Time        : Thu, 23 Jun 2016 19:42 CST
 Description : Implement a basic calculator to evaluate a simple expression string.
 The expression string may contain open ( and closing parentheses  ), the plus + or minus sign -, non-negative integers and empty spaces .
