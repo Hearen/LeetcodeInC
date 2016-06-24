@@ -31,7 +31,6 @@ public:
     vector<int> findMinHeightTrees(int n, vector<pair<int, int>>& edges) 
     {
         if(n == 1) return vector<int>(1,0);
-        vector<int> v;
         vector<vector<int>> graph(n);
         vector<int> indegrees(n, 0);
         for(auto& pair: edges)
@@ -44,7 +43,7 @@ public:
         int left = n; //quite essential to record the amount of nodes that still remain;
         vector<int> border0, border1; //peel the graph from the out-most border till there are only two or one nodes left;
         for(int i = 0; i < n; i++)
-        if(indegrees[i] == 1) border0.push_back(i);
+            if(indegrees[i] == 1) border0.push_back(i);
         while(left > 2)
         {
             for(int i = 0; i < border0.size(); i++) //peel one level at a time;
