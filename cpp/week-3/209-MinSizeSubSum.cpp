@@ -16,7 +16,7 @@ public:
         while(r<size && sum<s) sum += nums[r++];
         if(sum < s) return 0;
         int minLen = r-l;
-        while(r <= size)
+        while(r <= size) //r can be size after the first sum;
         {
             if(r < size) sum += nums[r++];
             while(l<size && sum>s) sum -= nums[l++];
