@@ -31,6 +31,9 @@ public:
 
 	//similar to find the start of the loop in a linked list;
 	//the integer is the pointer while the index is the link;
+    //[1...n] pointing to the index of the array, we start from index '0'
+    //and follow its number to the corresponding index then we just cannot 
+    //leave the array, there must be a circle here;
     int findDuplicate(vector<int>& nums) {
         int slow = nums[0], fast = nums[nums[0]];
         while(slow != fast)
