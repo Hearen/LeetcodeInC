@@ -65,16 +65,7 @@ public:
     {
         int len = s1.length(), i = 0, j = 0, k = 0;
         if(!len) return true;
-        int ***match = (int***)malloc(sizeof(int**)*(len+1));
-        for(i = 0; i <= len; ++i)
-        {
-            match[i] = (int**)malloc(sizeof(int*)*len);
-            for(j = 0; j < len; ++j)
-            {
-                match[i][j] = (int*)malloc(sizeof(int)*len);
-                memset(match[i][j], 0, sizeof(int)*len);
-            }
-        }
+        int match[len+1][len][len]{{{0}}};
         for(i = 0; i < len; ++i)
             for(j = 0; j < len; ++j)
                 match[1][i][j] = (s1[i]==s2[j]);
