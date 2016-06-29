@@ -22,8 +22,7 @@ private:
             else if(nums[m] < target) l = m+1;
             else break;
         }
-        if(nums[l] < target) return l+1; //ensure the index is pointed to the position whose element is equal to or bigger than the target;
-        else return l;
+        return nums[l]<target? l+1 : l;//ensure the index is pointed to the position whose element is equal to or bigger than the target;
     }
     
     
