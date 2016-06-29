@@ -37,6 +37,14 @@ public:
 	int maxProfit(vector<int>& prices) 
     {
         int k = 2, size = prices.size();
+        if(k > size/2) //too big, need acceleration;
+        {
+            int profit = 0;
+            for(int i = 1; i < size; ++i)
+                if(prices[i] > prices[i-1])
+                    profit += prices[i]-prices[i-1];
+            return profit;
+        }
         int hold[k]{0}, sold[k]{0};
         for(int i = 0; i < k; ++i) hold[i] = INT_MIN;
         for(int i = 0; i < size; ++i)
