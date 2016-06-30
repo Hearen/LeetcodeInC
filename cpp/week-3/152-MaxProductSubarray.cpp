@@ -1,7 +1,7 @@
 /*******************************************
 Author      : LHearen
 E-mail      : LHearen@126.com
-Time        : 2016-02-12 15:02
+Time        : Thu, 30 Jun 2016 07:56 CST
 Description : Find the contiguous subarray within an array (containing at least one number) which has the largest product.
 For example, given the array [2,3,-2,4],
 the contiguous subarray [2,3] has the largest product = 6.
@@ -45,7 +45,7 @@ public:
     //traversing from left to right and meantime from right to left
     //to calculate the possible max products since the subsequence will be 
     //from left to right or right to left anyway but in two directions 
-    //in case of neglecting the other half;
+    //in case of neglecting the other half [3, -1, 4];
     int maxProduct(vector<int>& nums) 
     {
         int lProduct = 1, rProduct = 1;

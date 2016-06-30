@@ -1,7 +1,7 @@
 /*******************************************
 Author      : LHearen
 E-mail      : LHearen@126.com
-Time        : 2016-02-13 20:16
+Time        : Thu, 30 Jun 2016 08:03 CST
 Description : Given a string s, partition s such that every substring of the partition is a palindrome.
 Return the minimum cuts needed for a palindrome partitioning of s.
 For example, given s = "aab",
