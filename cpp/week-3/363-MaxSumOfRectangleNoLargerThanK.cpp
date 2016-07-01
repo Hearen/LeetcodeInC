@@ -32,7 +32,7 @@ public:
                 for(int r = 0; r < rowSize; ++r) 
                     sums[r] += matrix[r][c];
                 set<int> sums_set;
-                sums_set.insert(0); //sentinel;
+                sums_set.insert(0); //ensure the starting row can be 0;
                 int maxSum = INT_MIN, sum = 0;
                 for(int i = 0; i < rowSize; ++i)
                 {
