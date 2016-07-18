@@ -1,0 +1,29 @@
+all: bubble0 bubble1 insertion0 insertion1 insertion2 insertion3 selection0 shaker0 
+
+bubble0:  bubble0.c utils.h utils.c
+	gcc -o 	bubble0 bubble0.c utils.h --std=c99 -g 
+
+bubble1: bubble1.c utils.h utils.c
+	gcc -o bubble1 	bubble1.c utils.h --std=c99 -g 
+	
+insertion0: insertion0.c utils.h utils.c
+	gcc -o insertion0 insertion0.c utils.h --std=c99 -g 
+
+insertion1: insertion1.c utils.h utils.c
+	gcc -o insertion1 insertion1.c utils.h --std=c99 -g 
+
+
+insertion2: insertion2.c utils.h utils.c
+	gcc -o insertion2 insertion2.c utils.h --std=c99 -g 
+
+insertion3: insertion3.c utils.h utils.c
+	gcc -o insertion3 insertion3.c utils.h --std=c99 -g 
+
+selection0: selection0.c utils.h utils.c
+	gcc -o selection0 selection0.c utils.h --std=c99 -g 
+
+shaker0: shaker0.c utils.h utils.c
+	gcc -o shaker0 shaker0.c utils.h --std=c99 -g 
+
+clean:
+	rm -f bubble0 bubble1 insertion0 insertion1 insertion2 insertion3 selection0 shaker0 
