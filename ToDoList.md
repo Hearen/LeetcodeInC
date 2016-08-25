@@ -9,6 +9,4 @@ Count Sort
 
 [Trie Tree](http://lhearen.top/2016/08/25/Word-Search/#more)
 [Segment Tree and Binary Indexed Tree](http://lhearen.top/2016/08/25/Range-Sum-Query/#more)
-
-[summary](notes/20160825.md)
-
+[note](notes/20160825.md)
