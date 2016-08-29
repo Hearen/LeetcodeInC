@@ -11,3 +11,13 @@ Sat Aug 27 11:09:13 CST 2016
  - [Prim's MST and Kruskal's MST](http://lhearen.top/2016/08/26/Minimum-Spanning-Tree/#more)
  - [sort for vector, set, map and priority_queue in various methods](http://lhearen.top/2016/08/27/Sort-for-Built-in-Containers/)
  - [note](notes/20160827.md)
+
+
+Mon Aug 28 10:28:43 CST 2016
+ - [Gray Code](http://lhearen.top/2016/08/28/Original-Queue/#more)
+ - [Original Queue](http://lhearen.top/2016/08/28/Original-Queue/#more)
+ - [note](notes/20160828.md)
+
+
+
+
