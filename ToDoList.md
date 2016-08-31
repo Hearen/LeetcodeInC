@@ -28,3 +28,13 @@ Tue Aug 30 11:14:09 CST 2016
  - [Regular Expression Matching](http://lhearen.top/2016/08/29/Regular-Expression-Matching/)
  - [note](notes/20160830.md)
 
+Wed Aug 31 09:00:16 CST 2016
+ - [Ternary Search](http://lhearen.top/2016/08/30/Ternary-Search/)
+ - [Mod of Big Integer](http://lhearen.top/2016/08/30/Mod-of-Big-Integer/)
+ - [Minimum Path Sum](http://lhearen.top/2016/08/31/Minimum-Path-Sum/#more)
+ - [Buy and Sell Stocks](http://lhearen.top/2016/07/27/Buy-and-Sell-Stocks/)
+ - [Longest Valid Parentheses](http://lhearen.top/2016/08/31/Longest-Valid-Parentheses/)
+ - [Remove Invalid Parentheses](http://lhearen.top/2016/08/31/Remove-Invalid-Parentheses/)
+ - [Different Ways to Add Parentheses](http://lhearen.top/2016/07/14/Different-Ways-to-Add-Parentheses/)
+ - [Generate Parentheses](http://lhearen.top/2016/08/31/Generate-Parentheses/)
+ - [note](notes/20160831.md)
