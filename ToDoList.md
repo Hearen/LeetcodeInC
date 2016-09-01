@@ -52,4 +52,5 @@ Thu Sep  1 11:18:20 CST 2016
  - [Integer Break](http://lhearen.top/2016/09/01/Integer-Break/)
  - [Burst Balloons](http://lhearen.top/2016/09/01/Burst-Balloons/#more)
  - [House Robber II](http://lhearen.top/2016/09/01/House-Robber-II/)
+ - [Paint Fence](http://lhearen.top/2016/09/01/Paint-Fence/)
  - [note](notes/20160901.md)
