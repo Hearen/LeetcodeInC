@@ -48,4 +48,8 @@ Thu Sep  1 11:18:20 CST 2016
  - [Distinct Subsequences](http://lhearen.top/2016/09/01/Distinct-Subsequences/)
  - [Coin Change](http://lhearen.top/2016/09/01/Coin-Change/)
  - [Palindrome](http://lhearen.top/2016/08/03/Palindrome/)
+ - [Dungeon Game](http://lhearen.top/2016/08/19/Dungeon-Game/)
+ - [Integer Break](http://lhearen.top/2016/09/01/Integer-Break/)
+ - [Burst Balloons](http://lhearen.top/2016/09/01/Burst-Balloons/#more)
+ - [House Robber II](http://lhearen.top/2016/09/01/House-Robber-II/)
  - [note](notes/20160901.md)
