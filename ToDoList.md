@@ -38,3 +38,14 @@ Wed Aug 31 09:00:16 CST 2016
  - [Different Ways to Add Parentheses](http://lhearen.top/2016/07/14/Different-Ways-to-Add-Parentheses/)
  - [Generate Parentheses](http://lhearen.top/2016/08/31/Generate-Parentheses/)
  - [note](notes/20160831.md)
+
+
+Thu Sep  1 11:18:20 CST 2016
+ - [Perfect Squares](http://lhearen.top/2016/09/01/Perfect-Squares/)
+ - [Counting Bits](http://lhearen.top/2016/09/01/Counting-Bits/)
+ - [Interleaving String](http://lhearen.top/2016/09/01/Interleaving-String/)
+ - [Scramble String](http://lhearen.top/2016/09/01/Scramble-String/)
+ - [Distinct Subsequences](http://lhearen.top/2016/09/01/Distinct-Subsequences/)
+ - [Coin Change](http://lhearen.top/2016/09/01/Coin-Change/)
+ - [Palindrome](http://lhearen.top/2016/08/03/Palindrome/)
+ - [note](notes/20160901.md)
