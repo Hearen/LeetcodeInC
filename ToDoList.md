@@ -54,3 +54,9 @@ Thu Sep  1 11:18:20 CST 2016
  - [House Robber II](http://lhearen.top/2016/09/01/House-Robber-II/)
  - [Paint Fence](http://lhearen.top/2016/09/01/Paint-Fence/)
  - [note](notes/20160901.md)
+
+
+Fri Sep  2 09:39:46 CST 2016
+ - [Dijkstra's shortest path algorithm](http://lhearen.top/2016/08/25/Dtra’s-shortest-path-algorithm/)
+ - [Prim's and Kruskal's](http://lhearen.top/2016/08/26/Minimum-Spanning-Tree/)
+ - [note](notes/20160902.md)
