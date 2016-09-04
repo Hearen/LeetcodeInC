@@ -59,4 +59,7 @@ Thu Sep  1 11:18:20 CST 2016
 Fri Sep  2 09:39:46 CST 2016
  - [Dijkstra's shortest path algorithm](http://lhearen.top/2016/08/25/Dtra’s-shortest-path-algorithm/)
  - [Prim's and Kruskal's](http://lhearen.top/2016/08/26/Minimum-Spanning-Tree/)
+ - [Regular Expression Matching](http://lhearen.top/2016/08/29/Regular-Expression-Matching/)
+ - [Wildcard Matching](http://lhearen.top/2016/08/30/Wildcard-Matching/)
+ - [KMP](http://lhearen.top/2016/09/04/KMP/)
  - [note](notes/20160902.md)
