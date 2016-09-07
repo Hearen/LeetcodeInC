@@ -63,3 +63,13 @@ Fri Sep  2 09:39:46 CST 2016
  - [Wildcard Matching](http://lhearen.top/2016/08/30/Wildcard-Matching/)
  - [KMP](http://lhearen.top/2016/09/04/KMP/)
  - [note](notes/20160902.md)
+
+
+Wed Sep  7 16:12:22 CST 2016
+ - [LCS](http://lhearen.top/2016/07/22/Longest-Common-Subsequence/)
+ - [Create Maximum Number](http://lhearen.top/2016/09/07/Create-Maximum-Number/)
+ - [Largest Divisible Subset](http://lhearen.top/2016/09/07/Largest-Divisible-Subset/)
+ - [Russian Doll Envelopes](http://lhearen.top/2016/07/20/Russian-Doll-Envelopes/)
+ - [Max Sum of Rectangle No Larger Than K](http://lhearen.top/2016/07/26/Max-Sum-of-Rectangle-No-Larger-Than-K/)
+ - [Paint House II](http://lhearen.top/2016/09/07/Paint-House-II/)
+ - [Bomb Enemy](http://lhearen.top/2016/09/07/Bomb-Enemy/)
