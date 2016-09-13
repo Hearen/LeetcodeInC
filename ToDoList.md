@@ -96,13 +96,15 @@ Mon Sep 12 14:45:25 CST 2016
  - [Remove Duplicates from Sorted List](http://lhearen.top/2016/08/01/Linked-List/)
  - [Rotate List](http://lhearen.top/2016/08/01/Linked-List/)
  - [Add Two Numbers](http://lhearen.top/2016/08/01/Linked-List/)
+ - [Plus One Linked List](http://lhearen.top/2016/09/13/Plus-One-Linked-List/)
  - [Reverse Linked List II](http://lhearen.top/2016/08/01/Linked-List/)
  - [Linked List Cycle II](http://lhearen.top/2016/08/01/Linked-List/)
  - [Copy List with Random Pointer](http://lhearen.top/2016/08/01/Linked-List/)
  - [Reverse Nodes in k-Group](http://lhearen.top/2016/08/01/Linked-List/)
 
 
-Mon Sep 12 15:24:20 CST 2016
+
+Tue Sep 13 09:57:12 CST 2016
  - [Mod of Big Integer](http://lhearen.top/2016/08/30/Mod-of-Big-Integer/)
  - [Integer Break](http://lhearen.top/2016/09/01/Integer-Break/)
  - [Making Polygons](http://lhearen.top/2016/08/10/Making-Polygons/)
@@ -141,3 +143,9 @@ Mon Sep 12 15:24:20 CST 2016
  - [Combinatorics](http://lhearen.top/2016/07/06/Math/)
  - [Integer Replacement](http://lhearen.top/2016/09/12/Integer-Replacement/)
  - [Strobogrammatic Numbers](http://lhearen.top/2016/09/12/Strobogrammatic-Number/)
+ - [Line Reflection](http://lhearen.top/2016/09/13/Line-Reflection/)
+ - [Sort Transformed Array](http://lhearen.top/2016/09/13/Sort-Transformed-Array/)
+
+
+Tue Sep 13 10:51:29 CST 2016
+ - [Bit manipulation](http://lhearen.top/2016/07/06/Bit-manipulation/)
