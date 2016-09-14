@@ -185,3 +185,22 @@ Tue Sep 13 21:21:51 CST 2016
  - [Find Leaves of Binary Tree](http://lhearen.top/2016/09/14/Find-Leaves-of-Binary-Tree/)
  - [Binary Tree Upside Down](http://lhearen.top/2016/09/14/Binary-Tree-Upside-Down/)
 
+
+
+Wed Sep 14 19:31:44 CST 2016
+ - [Median of Two Sorted Arrays]
+ - [Search for a Range]
+ - [Valid Perfect Square]
+ - [Sqrt(x)]
+ - [Longest Increasing Subsequence]
+ - [Find the Duplicate Number]
+ - [First Bad Version]
+ - [H-Index]
+ - [H-Index II]
+ - [Search a 2D Matrix II]
+ - [Find Peak Element]
+ - [Find Minimum in Rotated Sorted Array]
+ - [Search in Rotated Sorted Array II]
+ - [Search a 2D Matrix]
+ - [Kth Largest Element in an Array]
+ - [Kth Smallest Element in a Sorted Matrix]
