@@ -1,3 +1,40 @@
+Tue Sep 13 21:21:51 CST 2016
+
+By LHearen
+
+ - [In-order traversal](http://lhearen.top/2016/07/09/Tree/)
+ - [Binary Tree Postorder Traversal](http://lhearen.top/2016/07/09/Tree/)
+ - [Serialize and Deserialize Binary Tree](http://lhearen.top/2016/07/09/Tree/)
+ - [Unique Binary Search Trees II](http://lhearen.top/2016/07/09/Tree/)
+ - [Construct Binary Tree from Preorder and Inorder Traversal](http://lhearen.top/2016/07/09/Tree/)
+ - [Construct Binary Tree from Preorder and Inorder Traversal](http://lhearen.top/2016/07/09/Tree/)
+ - [Balanced Binary Tree](http://lhearen.top/2016/07/09/Tree/)
+ - [Lowest Common Ancestor of a Binary Tree](http://lhearen.top/2016/07/09/Tree/)
+ - [LCA in BST](http://lhearen.top/2016/07/09/Tree/)
+ - [Symmetric Tree](http://lhearen.top/2016/07/09/Tree/)
+ - [Recover Binary Search Tree](http://lhearen.top/2016/07/09/Tree/)
+ - [Binary Search Tree Iterator](http://lhearen.top/2016/07/09/Tree/)
+ - [Binary Tree Maximum Path Sum](http://lhearen.top/2016/07/09/Tree/)
+ - [Populating Next Right Pointers in Each Node II](http://lhearen.top/2016/07/09/Tree/)
+ - [Path Sum II](http://lhearen.top/2016/07/09/Tree/)
+ - [House Robber III](http://lhearen.top/2016/07/09/Tree/)
+ - [Kth Smallest Element in a BST](http://lhearen.top/2016/07/09/Tree/)
+ - [Invert Binary Tree](http://lhearen.top/2016/09/13/Invert-Binary-Tree/)
+ - [Validate Binary Search Tree](http://lhearen.top/2016/09/13/Validate-Binary-Search-Tree/)
+ - [Minimum Depth of Binary Tree](http://lhearen.top/2016/09/13/Minimum-Depth-of-Binary-Tree/)
+ - [Flatten Binary Tree to Linked List](http://lhearen.top/2016/09/13/Flatten-Binary-Tree-to-Linked-List/)
+ - [Binary Tree Paths](http://lhearen.top/2016/09/13/Binary-Tree-Paths/)
+ - [Binary Tree Right Side View](http://lhearen.top/2016/09/13/Binary-Tree-Right-Side-View/)
+ - [Count Complete Tree Nodes](http://lhearen.top/2016/08/18/Count-Complete-Tree-Nodes/)
+ - [Count Univalue Subtrees](http://lhearen.top/2016/09/14/Count-Univalue-Subtrees/)
+ - [Binary Tree Longest Consecutive Sequence](http://lhearen.top/2016/09/14/Binary-Tree-Longest-Consecutive-Sequence/)
+ - [Verify Preorder Serialization of a Binary Tree](http://lhearen.top/2016/07/12/Verify-Preorder-Serialization-of-a-Binary-Tree/)
+ - [Verify Preorder Sequence in Binary Search Tree](http://lhearen.top/2016/09/14/Verify-Preorder-Sequence-in-Binary-Search-Tree/)
+ - [Closest Binary Search Tree Value](http://lhearen.top/2016/09/14/Closest-Binary-Search-Tree-Value/)
+ - [Largest BST Subtree](http://lhearen.top/2016/09/14/Largest-BST-Subtree/)
+ - [Find Leaves of Binary Tree](http://lhearen.top/2016/09/14/Find-Leaves-of-Binary-Tree/)
+ - [Binary Tree Upside Down](http://lhearen.top/2016/09/14/Binary-Tree-Upside-Down/)
+
 
 ### General
 Tree represents nodes connected by edges. We'll going to discuss binary tree or binary search tree specifically.
@@ -1052,4 +1089,376 @@ public:
         return sum + (1<<(height-1)) - 1;
     }
 };
+```
+
+### Count Univalue Subtrees
+Given a binary tree, count the number of uni-value subtrees.  A Uni-value subtree means all nodes of the subtree have the same value.
+For example:
+Given binary tree,
+```
+              5
+             / \
+            1   5
+           / \   \
+          5   5   5
+```
+return 4.
+
+[test](https://leetcode.com/problems/count-univalue-subtrees/)
+
+### Solution
+Explanation will be added.
+
+```
+class Solution {
+    bool isSame(TreeNode* root, int val, int& count){
+        if(!root) return true;
+        if(!isSame(root->left, root->val, count) | !isSame(root->right, root->val, count)) return false;
+        count++;
+        return root->val == val;
+    }
+public:
+    int countUnivalSubtrees(TreeNode* root) {
+        int count = 0;
+        isSame(root, 0, count);
+        return count;
+    }
+};
+```
+### Binary Tree Longest Consecutive Sequence
+Given a binary tree, find the length of the longest consecutive sequence path (ascending order). The path refers to any sequence of nodes from some starting node to any node in the tree along the parent-child connections. The longest consecutive path need to be from parent to child (cannot be the reverse).
+```
+For example,
+   1
+    \
+     3
+    / \
+   2   4
+        \
+         5
+Longest consecutive sequence path is 3-4-5, so return 3.
+   2
+    \
+     3
+    / 
+   2    
+  / 
+ 1
+Longest consecutive sequence path is 2-3,not3-2-1, so return 2.
+```
+[test](https://leetcode.com/problems/binary-tree-longest-consecutive-sequence/)
+
+### Solution
+> **Note** The `len` here refers to the maximal consecutive length till the current node, including the current.
+
+```
+class Solution {
+public:
+    int longestConsecutive(TreeNode* root) {
+        return search(root, nullptr, 0);
+    }
+    
+    int search(TreeNode *root, TreeNode *parent, int len) {
+        if (!root) return len;
+        len = (parent && root->val==parent->val + 1)? len+1:1;
+        return max(len, max(search(root->left, root, len), search(root->right, root, len)));
+    }
+};
+```
+### Verify Preorder Serialization of a Binary Tree
+One way to serialize a binary tree is to use pre-order traversal. When we encounter a non-null node, we record the node's value. If it is a null node, we record using a sentinel value such as #.
+```
+     _9_
+    /   \
+   3     2
+  / \   / \
+ 4   1  #  6
+/ \ / \   / \
+# # # #   # #
+```
+For example, the above binary tree can be serialized to the string "9,3,4,#,#,1,#,#,2,#,6,#,#", where # represents a null node.  
+Given a string of comma separated values, verify whether it is a correct preorder traversal serialization of a binary tree. Find an algorithm without reconstructing the tree.  
+Each comma separated value in the string must be either an integer or a character '#' representing null pointer.  
+You may assume that the input format is always valid, for example it could never contain two consecutive commas such as "1,,3".  
+
+- Example 1:
+"9,3,4,#,#,1,#,#,2,#,6,#,#"
+Return true 
+
+- Example 2:
+"1,#"
+Return false 
+
+- Example 3:
+"9,#,#,1"
+Return false
+
+
+### Solution
+
+Let's analyse this problem first: it's a binary tree and it's traversed in pre-order. Then there are two points right here:
+
+- `empty nodes` can only be children
+- parents always go before children
+
+According to binary tree, we also know that the amount of `empty`nodes will exactly larger than `non-empty` nodes by one. So before we reach the end: the amount of `empty` nodes can never be larger and when reaching the end, it will be exactly one.
+
+How are we going to check the empty and non-empty? 
+
+- quite simple here, since the nodes are separated by `comma`, we can just traverse the string and once encountering a comma, we check its previous character, if it's `#` which represents empty nodes otherwise non-empty ones; as for the last node, we are about to take advantage of the termination character `\0` as another splitter, same as comma to ensure cleanness of code.
+
+The solution will be as follows then.
+
+```
+bool isValidSerialization(string preorder) 
+{
+    int len = preorder.length(), diff = 0;
+    for(int i = 0; i <= len; ++i)
+    {
+        if(preorder[i]==',' || preorder[i]=='\0')
+        {
+            if(preorder[i-1] == '#') diff++;
+            else diff--;
+            if(diff==1 && i==len) return true;
+            if(diff > 0) return false;
+        }
+    }
+    return diff == 1;
+}
+```
+### Verify Preorder Sequence in Binary Search Tree
+Given an array of numbers, verify whether it is the correct preorder traversal sequence of a binary search tree.  You may assume each number in the sequence is unique.
+
+> Follow up: Could you do it using only constant space complexity?
+
+[test](https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree/)
+### Solution
+Explanation will be added.
+#### Recursive - 120ms
+```
+class Solution {
+    bool verify(vector<int>::iterator begin, vector<int>::iterator end, int low, int high){
+        if(begin > end) return true;
+        if(*begin<low || *begin>high) return false;
+        auto newBegin = upper_bound(begin, end+1, *begin); //uppder_bound searching range - [);
+        return verify(begin+1, newBegin-1, low, *begin) && verify(newBegin, end, *begin, high);
+    }
+public:
+    bool verifyPreorder(vector<int>& preorder) {
+        if(preorder.empty()) return true;
+        return verify(preorder.begin(), preorder.end()-1, INT_MIN, INT_MAX);
+    }
+};
+```
+#### Iterative - 60ms
+```
+bool verifyPreorder(vector<int>& preorder) {
+	int low = INT_MIN;
+	vector<int> v;
+	for(auto p: preorder){
+		if(p < low) return false;
+		while(v.size() && v.back()<p){ //retrieve the parent;
+			low = v.back();
+			v.pop_back();
+		} 
+		v.push_back(p);
+	}
+	return true;
+}
+```
+### Closest Binary Search Tree Value
+Given a non-empty binary search tree and a target value, find the value in the BST that is closest to the target.  
+Note: Given target value is a floating point.  You are guaranteed to have only one unique value in the BST that is closest to the target.
+> Follow-up: what if searching out k closest values and you may assume k is always valid, that is: k ≤ total nodes.  You are guaranteed to have only one unique set of k values in the BST that are closest to the target.
+
+### Solution
+Explanation will be added.
+#### Primitive
+[test](https://leetcode.com/problems/closest-binary-search-tree-value/)
+```
+class Solution {
+public:
+    int closestValue(TreeNode* root, double target) {
+        int ret = root->val;
+        while(root){
+            if(fabs(ret-target) > fabs(root->val-target)) ret = root->val;
+            root = root->val>target? root->left:root->right;
+        }
+        return ret;
+    }
+};
+```
+#### Follow-up
+[test](https://leetcode.com/problems/closest-binary-search-tree-value-ii/)
+##### Priority_queue
+```
+class Solution {
+private:
+    priority_queue<pair<double, int>> minHeap;
+public:
+    vector<int> closestKValues(TreeNode* root, double target, int k) {
+        vector<int> res;
+        traverse(root, target, k);
+        while(minHeap.size()){
+            res.push_back(minHeap.top().second);
+            minHeap.pop();
+        }
+        return res;
+    }
+    
+    void traverse(TreeNode* root, double target, int k){
+        if(root == NULL) return;
+        double diff = abs(root->val-target);
+        minHeap.push({diff, root->val});
+        if(minHeap.size() > k) minHeap.pop();
+        traverse(root->left, target, k);
+        traverse(root->right, target, k);
+    }
+};
+```
+##### In-order
+```
+class Solution {
+    void inorder(TreeNode* root, double target, bool isReversed, vector<int>& v){
+        if(!root) return ;
+        inorder(isReversed? root->right:root->left, target, isReversed, v);
+        if((isReversed&&root->val<target) || (!isReversed&&root->val>=target)) return ;
+        v.push_back(root->val);
+        inorder(isReversed? root->left:root->right, target, isReversed, v);
+    }
+public:
+    vector<int> closestKValues(TreeNode* root, double target, int k) {
+        vector<int> v0, v1;
+        inorder(root, target, false, v0);
+        inorder(root, target, true, v1);
+        vector<int> v;
+        int i = v0.size()-1, j = v1.size()-1;
+        while(k--) v.push_back((j<0 || (i>=0&&fabs(v0[i]-target)<fabs(v1[j]-target)))? v0[i--]:v1[j--]);
+        return v;
+    }
+};
+```
+### Largest BST Subtree
+Given a binary tree, find the largest subtree which is a Binary Search Tree (BST), where largest means subtree with largest number of nodes in it.
+
+Note:
+A subtree must include all of its descendants.
+Here's an example:
+```
+    10              
+    / \
+   5  15           5
+  / \   \         / \
+ 1   8   7       1   8
+```
+The Largest BST Subtree in this case is the highlighted one. 
+The return value is the subtree's size, which is 3.
+> Follow up: Can you figure out ways to solve it with O(n) time complexity?
+
+[test](https://leetcode.com/problems/largest-bst-subtree/)
+### Solution
+Explanation will be added.
+
+```
+class Solution {
+    bool isBST(TreeNode* root, int& maxSize, int& low, int& high){
+        if(!root) return true;
+        int lMaxSize = 0, rMaxSize = 0;
+        int lLow = 0, lHigh = 0, rLow = 0, rHigh = 0;
+        bool lResult = isBST(root->left, lMaxSize, lLow, lHigh);
+        bool rResult = isBST(root->right, rMaxSize, rLow, rHigh);
+        if(lResult && rResult){
+            if((!root->left || root->val>lHigh) && (!root->right || root->val<rLow)){
+                maxSize = lMaxSize+rMaxSize+1;
+                low = root->left? lLow:root->val;
+                high = root->right? rHigh:root->val;
+                return true;
+            }
+        }
+        maxSize = max(lMaxSize, rMaxSize);
+        return false;
+    }
+public:
+    int largestBSTSubtree(TreeNode* root) {
+        int maxSize = 0, low = 0, high = 0;
+        isBST(root, maxSize, low, high);
+        return maxSize;
+    }
+};
+```
+### Find Leaves of Binary Tree
+Given a binary tree, collect a tree's nodes as if you were doing this: Collect and remove all leaves, repeat until the tree is empty.
+```
+Example:
+Given binary tree 
+          1
+         / \
+        2   3
+       / \     
+      4   5    
+Returns [4, 5, 3], [2], [1].
+
+Explanation:
+1. Removing the leaves [4, 5, 3] would result in this tree: 
+          1
+         / 
+        2          
+2. Now removing the leaf [2] would result in this tree: 1          
+3. Now removing the leaf [1] would result in the empty tree: []         
+Returns [4, 5, 3], [2], [1].
+```
+
+[test](https://leetcode.com/problems/find-leaves-of-binary-tree/)
+
+### Solution
+Explanation will be added.
+
+```
+class Solution {
+    int retrieveLevel(TreeNode* root, vector<vector<int>>& vv){
+        if(!root) return 0;
+        int level = max(retrieveLevel(root->left, vv), retrieveLevel(root->right, vv))+1;
+        if(vv.size() < level) vv.push_back(vector<int>());
+        vv[level-1].push_back(root->val);
+        return level;
+    }
+public:
+    vector<vector<int>> findLeaves(TreeNode* root) {
+        vector<vector<int>> vv;
+        retrieveLevel(root, vv);
+        return vv;
+    }
+};
+```
+### Binary Tree Upside Down
+Given a binary tree where all the right nodes are either leaf nodes with a sibling (a left node that shares the same parent node) or empty, flip it upside down and turn it into a tree where the original right nodes turned into left leaf nodes. Return the new root.
+```
+For example:
+Given a binary tree {1,2,3,4,5},
+    1
+   / \
+  2   3
+ / \
+4   5
+return the root of the binary tree [4,5,2,#,#,3,1].
+   4
+  / \
+ 5   2
+    / \
+   3   1  
+```
+[test](https://leetcode.com/problems/binary-tree-upside-down/)
+
+### Solution
+Explanation will be added.
+
+```
+TreeNode* upsideDownBinaryTree(TreeNode* root) {
+	if(!root || (!root->left&&!root->right)) return root;
+	TreeNode *newRoot = upsideDownBinaryTree(root->left);
+	root->left->left = root->right;
+	root->left->right = root;
+	root->left = root->right = NULL;
+	return newRoot;
+}
 ```
