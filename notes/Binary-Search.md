@@ -394,10 +394,22 @@ A peak element is an element that is greater than its neighbors.  Given an input
 [test](https://leetcode.com/problems/find-peak-element/)
 
 ### Solution
+#### Binary search
+```
+int findPeakElement(vector<int>& nums) {
+	int low = 0, high = nums.size()-1;
+	while(low < high){
+		int m1 = low+((high-low)>>1), m2 = m1+1;
+		if(nums[m1] < nums[m2]) low = m2;
+		else high = m1;
+	}
+	return low;
+}
+```
+#### Trick
 The most direct solution is to search and compare its neighbors until a peak, but actually we can do better - if the next is bigger than the current then the current is a peak (bigger than its previous also) if not then the previous will already be returned.
 
 > **Note** A corner case: the last number should be handled separately, since it will be ignored in the checking process discussed above.
-
 ```
 int findPeakElement(vector<int>& nums) {
     for(int i = 0; i < nums.size()-1; ++i)

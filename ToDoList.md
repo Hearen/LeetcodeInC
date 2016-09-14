@@ -188,17 +188,17 @@ Tue Sep 13 21:21:51 CST 2016
 
 
 Wed Sep 14 19:31:44 CST 2016
- - [Median of Two Sorted Arrays]
- - [Search for a Range]
- - [Valid Perfect Square]
- - [Sqrt(x)]
- - [Longest Increasing Subsequence]
- - [Find the Duplicate Number]
- - [First Bad Version]
- - [H-Index]
- - [Search a 2D Matrix]
- - [Find Peak Element]
- - [Find Minimum in Rotated Sorted Array]
- - [Search in Rotated Sorted Array]
- - [Kth Largest Element in an Array]
- - [Kth Smallest Element in a Sorted Matrix]
+ - [Median of Two Sorted Arrays](http://lhearen.top/2016/08/21/Median-of-Two-Sorted-Arrays/)
+ - [Search for a Range](http://lhearen.top/2016/08/20/Search-for-a-Range/)
+ - [Valid Perfect Square](http://lhearen.top/2016/07/07/Binary-Search/)
+ - [Sqrt(x)](http://lhearen.top/2016/08/19/Sqrt-x/)
+ - [Longest Increasing Subsequence](http://lhearen.top/2016/07/07/Binary-Search/)
+ - [Find the Duplicate Number](http://lhearen.top/2016/07/07/Binary-Search/)
+ - [First Bad Version](http://lhearen.top/2016/07/07/Binary-Search/)
+ - [H-Index](http://lhearen.top/2016/08/17/H-Index/)
+ - [Search a 2D Matrix](http://lhearen.top/2016/08/19/Search-a-2D-Matrix/)
+ - [Find Peak Element](http://lhearen.top/2016/08/16/Find-Peak-Element/)
+ - [Find Minimum in Rotated Sorted Array](http://lhearen.top/2016/08/19/Find-Minimum-in-Rotated-Sorted-Array/)
+ - [Search in Rotated Sorted Array](http://lhearen.top/2016/08/19/Search-in-Rotated-Sorted-Array/)
+ - [Kth Largest Element in an Array](http://lhearen.top/2016/07/07/Kth-Largest-Element-In-An-Array/)
+ - [Kth Smallest Element in a Sorted Matrix](http://lhearen.top/2016/08/13/Kth-Smallest-Element-in-a-Sorted-Matrix/)
